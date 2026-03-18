@@ -1,0 +1,237 @@
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Tech grid - scrolling movement */
+.animated-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.2) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: gridScroll 15s linear infinite;
+}
+
+.animated-bg-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.12) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: gridScroll 22s linear infinite reverse;
+}
+
+@keyframes gridScroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
+}
+
+/* Falling / flowing data particles */
+.animated-bg-particles {
+  position: absolute;
+  inset: 0;
+}
+
+.animated-bg-particles .particle {
+  position: absolute;
+  width: 3px;
+  height: 24px;
+  left: var(--x);
+  top: -20px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(59, 130, 246, 0.9),
+    rgba(59, 130, 246, 0.5)
+  );
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+  animation: particleFall 8s linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes particleFall {
+  0% { transform: translateY(0) scaleY(0.3); opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 0.7; }
+  100% { transform: translateY(100vh) scaleY(1); opacity: 0; }
+}
+
+/* Circuit trace - traveling light */
+.animated-bg-circuit {
+  position: absolute;
+  inset: 0;
+}
+
+.circuit-line {
+  position: absolute;
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.circuit-h {
+  width: 100%;
+  height: 1px;
+  top: 30%;
+}
+
+.circuit-v {
+  width: 1px;
+  height: 100%;
+  left: 25%;
+}
+
+.circuit-trace {
+  position: absolute;
+  width: 280px;
+  height: 3px;
+  top: 30%;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 1),
+    transparent
+  );
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.9), 0 0 60px rgba(59, 130, 246, 0.5);
+  animation: circuitTrace 4s linear infinite;
+}
+
+@keyframes circuitTrace {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+/* Diagonal data streams */
+.animated-bg-streams {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.animated-bg-streams .stream {
+  position: absolute;
+  width: 2px;
+  height: 200%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(59, 130, 246, 0.4),
+    rgba(59, 130, 246, 0.3),
+    transparent
+  );
+  left: 20%;
+  top: -50%;
+  transform: rotate(-15deg);
+}
+
+.animated-bg-streams .stream:nth-child(2) {
+  left: 50%;
+  transform: rotate(-25deg);
+}
+
+.animated-bg-streams .stream:nth-child(3) {
+  left: 80%;
+  transform: rotate(-10deg);
+}
+
+.animated-bg-streams .stream:nth-child(1) {
+  animation: streamFlow1 5s linear infinite;
+}
+.animated-bg-streams .stream:nth-child(2) {
+  animation: streamFlow2 6s linear infinite 2s;
+}
+.animated-bg-streams .stream:nth-child(3) {
+  animation: streamFlow3 5.5s linear infinite 4s;
+}
+
+@keyframes streamFlow1 {
+  0% { transform: rotate(-15deg) translateY(-50%); }
+  100% { transform: rotate(-15deg) translateY(0); }
+}
+@keyframes streamFlow2 {
+  0% { transform: rotate(-25deg) translateY(-50%); }
+  100% { transform: rotate(-25deg) translateY(0); }
+}
+@keyframes streamFlow3 {
+  0% { transform: rotate(-10deg) translateY(-50%); }
+  100% { transform: rotate(-10deg) translateY(0); }
+}
+
+/* Orbiting nodes - tech nodes */
+.animated-bg-orbit {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  right: 15%;
+  animation: orbitRotate 15s linear infinite;
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(59, 130, 246, 1);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.9), 0 0 40px rgba(59, 130, 246, 0.5);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateX(140px);
+}
+
+.animated-bg-orbit .orbit-dot:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(120deg) translateX(140px);
+}
+
+.animated-bg-orbit .orbit-dot:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(240deg) translateX(140px);
+}
+
+@keyframes orbitRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Gradient orbs - tech mesh */
+.animated-bg-gradient {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.55;
+}
+
+.animated-bg-gradient-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.45) 0%, transparent 70%);
+  top: -15%;
+  right: -5%;
+  animation: orbMove1 12s ease-in-out infinite;
+}
+
+.animated-bg-gradient-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, transparent 70%);
+  bottom: -10%;
+  left: -5%;
+  animation: orbMove2 14s ease-in-out infinite;
+}
+
+@keyframes orbMove1 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-40px, 30px); }
+  50% { transform: translate(30px, -20px); }
+  75% { transform: translate(-20px, -40px); }
+}
+
+@keyframes orbMove2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(35px, -30px); }
+  66% { transform: translate(-25px, 25px); }
+}
