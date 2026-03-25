@@ -2,10 +2,10 @@ import './Hero.css';
 
 export default function Hero() {
   const socialLinks = [
-    { name: 'GitHub', href: 'https://github.com/vickismart08', icon: 'gh' },
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/victor-amule-8352b127a/', icon: 'in' },
-    { name: 'Twitter', href: 'https://twitter.com', icon: 'tw' },
-    { name: 'Stack Overflow', href: 'https://stackoverflow.com', icon: 'so' },
+    { name: 'GitHub', href: 'https://github.com/vickismart08', icon: 'GH' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/victor-amule-8352b127a/', icon: 'IN' },
+    { name: 'TikTok', href: 'https://www.tiktok.com/@smart_flutter?_r=1&_t=ZS-94z6XTLC7l3', icon: 'TK' },
+    { name: 'YouTube', href: '', icon: 'YT' },
   ];
 
   return (

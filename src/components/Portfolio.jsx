@@ -11,7 +11,7 @@ const projects = [
     image: '/faveremit.png',
   },
   {
-    title: 'SmartTech Portfolio',
+    title: 'SmarTec Portfolio',
     category: 'Web',
     desc: 'This portfolio site: single-page layout with hero, about, skills, services, portfolio, resume, and contact. Animated tech background, EmailJS contact form, responsive design, and dark theme.',
     stack: ['React', 'Vite', 'CSS'],
@@ -52,9 +52,9 @@ export default function Portfolio() {
                   </>
                 ) : null}
                 {!project.image ? (
-                  project.title === 'SmartTech Portfolio' ? (
+                  project.title === 'SmarTec Portfolio' ? (
                     <div className="project-placeholder project-placeholder--title">
-                      <span className="project-title-logo">SmartTech</span>
+                      <span className="project-title-logo">SmarTec</span>
                     </div>
                   ) : project.title === 'SwiftDrop' ? (
                     <div className="project-placeholder project-placeholder--title">

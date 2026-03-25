@@ -18,7 +18,7 @@ export default function Header() {
     <header className="header">
       <div className="header-inner">
         <a href="#home" className="logo">
-          <span className="logo-text">SmartTech</span>
+          <span className="logo-text">SmarTec</span>
           <span className="logo-accent">..</span>
         </a>
 
